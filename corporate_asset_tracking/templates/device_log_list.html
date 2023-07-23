@@ -5,6 +5,7 @@
 </head>
 <body>
     <h2>Device Log List</h2>
+    <a href="{% url 'accounts:logout' %}">Logout</a>
     {% if device_logs %}
         <ul>
             {% for log in device_logs %}
