@@ -26,8 +26,8 @@ class Device(models.Model):
 
     company = models.ForeignKey(Company, on_delete=models.CASCADE)
     condition = models.CharField(max_length=10, choices=CONDITION_CHOICES, default='good')
-    device_type = models.CharField(max_length=10, blank= False)
-    device_model = models.CharField(max_length=10, blank= False)
+    device_type = models.CharField(max_length=10, blank= False, null=True)
+    device_model = models.CharField(max_length=10, blank= False , null=True)
    
     
 class DeviceLog(models.Model):

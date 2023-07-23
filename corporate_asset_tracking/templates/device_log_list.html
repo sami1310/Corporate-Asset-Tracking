@@ -17,12 +17,16 @@
                     Condition when Checked Out: {{ log.condition_when_checked_out }}<br>
                     Condition when Checked In: {{ log.condition_when_checked_in }}<br>
                 </li>
+                
             {% endfor %}
+            <p>Want to add new log?</p>
+            <a href="{% url 'asset_logs:create_device_log' %}">Create Log</a>
+            
         </ul>
     {% else %}
         <p>Your company has no logs yet.</p>
         <p>Please add Device logs</p>
-        <a href="{% url 'asset_logs:create_device_log' %}">Logout</a>
+        <a href="{% url 'asset_logs:create_device_log' %}">Create Log</a>
     {% endif %}
 </body>
 </html>

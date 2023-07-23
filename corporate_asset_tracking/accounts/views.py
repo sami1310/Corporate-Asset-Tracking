@@ -1,9 +1,3 @@
-#from django.shortcuts import render, redirect
-#from django.contrib.auth.models import User
-#from asset_logs.models import Company, UserProfile
-#from django.views import View
-#from .forms import SignUpForm
-
 from django.shortcuts import render, redirect
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login, logout

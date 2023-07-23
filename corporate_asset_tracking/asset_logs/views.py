@@ -1,14 +1,9 @@
-#from django.shortcuts import render
-#from django.contrib.auth.mixins import LoginRequiredMixin
-#from django.views.generic import ListView
-#from .models import DeviceLog, UserProfile
-#from django.shortcuts import get_object_or_404
-
 from django.shortcuts import render, redirect
 from .models import DeviceLog, Company, UserProfile 
 from django.contrib.auth.decorators import login_required
 from .forms import DeviceLogForm
 
+# View for getting device log list, company admin will be able to see only their companies device logs
 @login_required
 def device_log_list(request):
     user_company = request.user.userprofile.company
@@ -16,6 +11,8 @@ def device_log_list(request):
     return render(request, 'device_log_list.html', {'device_logs': device_logs})
 
 
+
+# View for creating new device logs
 @login_required
 def create_device_log(request):
     user_company = request.user.userprofile.company
