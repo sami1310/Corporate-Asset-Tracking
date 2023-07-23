@@ -1,10 +1,25 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Device Log List</title>
 </head>
 <body>
-  <h1>you are now inside device logs</h1>  
+    <h2>Device Log List</h2>
+    {% if device_logs %}
+        <ul>
+            {% for log in device_logs %}
+                <li>
+                    Device: {{ log.device.device_type }} - {{ log.device.device_model }}<br>
+                    Checked Out Date: {{ log.checked_out_date }}<br>
+                    Checked In Date: {{ log.checked_in_date }}<br>
+                    Condition when Checked Out: {{ log.condition_when_checked_out }}<br>
+                    Condition when Checked In: {{ log.condition_when_checked_in }}<br>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>Your company has no logs yet.</p>
+    {% endif %}
 </body>
 </html>
+
